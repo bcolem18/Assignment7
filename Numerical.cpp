@@ -6,6 +6,7 @@
 
 
 
+
 double func_1(double x, int intensity)
 {
 	
@@ -33,10 +34,9 @@ int main(int argc, char **argv)
     b=5; 
     int intensity=1; 
     int N=100; 
-     
+    double t1, t2; 
     
-    
-    
+    t1 = MPI_Wtime(); 
     MPI_Init(&argc, &argv);
      MPI_Comm_rank(MPI_COMM_WORLD, &rank); //get process rank
      MPI_Comm_size(MPI_COMM_WORLD, &Procs); //find out how many processes are being used
@@ -72,6 +72,9 @@ int main(int argc, char **argv)
      }
     
     MPI_Finalize();
+    t2 = MPI_Wtime(); 
+    printf( "Elapsed time is %f\n", t2 - t1 ); 
+ 
     return 0; 
     
   //  }
