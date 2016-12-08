@@ -1,0 +1,46 @@
+
+
+
+mpicxx Numerical.cpp -o Num.exe
+
+ 
+
+For 1 node and 1 proc: 
+
+mpiexec -np 1 ./Num.exe
+
+
+qsub -d `pwd` -l nodes=4:ppn=1 ./script2.sh
+
+For 2 procs:
+
+mpiexec -np 2 ./Num.exe
+
+
+qsub -d `pwd` -l nodes=4:ppn=2 ./script2.sh
+
+For 4 Procs:
+
+mpiexec -np 4 ./Num.exe
+
+
+qsub -d `pwd` -l nodes=2:ppn=2 ./script2.sh
+
+For 8 procs:
+
+mpiexec -np 8 ./Num.exe
+
+
+qsub -d `pwd` -l nodes=2:ppn=4 ./script2.sh
+
+
+For 16 procs:
+
+mpiexec -np 16 ./Num.exe
+
+qsub -d `pwd` -l nodes=4:ppn=4 ./script2.sh
+For 32 procs: 
+
+mpiexec -np 32 ./Num.exe
+
+qsub -d `pwd` -l nodes=4:ppn=8 ./script2.sh
